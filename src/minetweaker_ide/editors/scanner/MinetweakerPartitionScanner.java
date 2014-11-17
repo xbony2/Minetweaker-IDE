@@ -1,4 +1,6 @@
-package minetweaker_ide.editors;
+package minetweaker_ide.editors.scanner;
+
+import minetweaker_ide.editors.TagRule;
 
 import org.eclipse.jface.text.rules.*;
 

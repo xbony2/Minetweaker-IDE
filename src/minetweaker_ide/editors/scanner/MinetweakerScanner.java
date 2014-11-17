@@ -1,5 +1,7 @@
-package minetweaker_ide.editors;
+package minetweaker_ide.editors.scanner;
 
+import minetweaker_ide.editors.ColorManager;
+import minetweaker_ide.editors.IMinetweakerColorConstants;
 import minetweaker_ide.editors.detectors.MinetweakerWhitespaceDetector;
 
 import org.eclipse.jface.text.rules.*;

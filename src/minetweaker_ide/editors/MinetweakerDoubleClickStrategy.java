@@ -60,22 +60,22 @@ public class MinetweakerDoubleClickStrategy implements ITextDoubleClickStrategy 
 			int len = endPos - offset;
 			fText.setSelectedRange(offset, len);
 			return true;
-		} catch (BadLocationException x) {
+		} catch (BadLocationException e) {
 		}
 
 		return false;
 	}
-	protected boolean selectWord(int caretPos) {
+	protected boolean selectWord(int caretPos){
 
 		IDocument doc = fText.getDocument();
 		int startPos, endPos;
 
-		try {
+		try{
 
 			int pos = caretPos;
 			char c;
 
-			while (pos >= 0) {
+			while (pos >= 0){
 				c = doc.getChar(pos);
 				if (!Character.isJavaIdentifierPart(c))
 					break;
@@ -87,7 +87,7 @@ public class MinetweakerDoubleClickStrategy implements ITextDoubleClickStrategy 
 			pos = caretPos;
 			int length = doc.getLength();
 
-			while (pos < length) {
+			while (pos < length){
 				c = doc.getChar(pos);
 				if (!Character.isJavaIdentifierPart(c))
 					break;
