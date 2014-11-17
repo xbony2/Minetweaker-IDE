@@ -15,8 +15,8 @@ public class MinetweakerDocumentProvider extends FileDocumentProvider {
 				new FastPartitioner(
 					new MinetweakerPartitionScanner(),
 					new String[] {
-						MinetweakerPartitionScanner.XML_TAG,
-						MinetweakerPartitionScanner.XML_COMMENT });
+						MinetweakerPartitionScanner.ZS_TAG,
+						MinetweakerPartitionScanner.ZS_COMMENT });
 			partitioner.connect(document);
 			document.setDocumentPartitioner(partitioner);
 		}

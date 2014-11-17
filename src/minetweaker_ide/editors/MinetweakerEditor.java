@@ -9,9 +9,10 @@ public class MinetweakerEditor extends TextEditor {
 	public MinetweakerEditor() {
 		super();
 		colorManager = new ColorManager();
-		setSourceViewerConfiguration(new MinetweakerConfiguration(colorManager));
-		setDocumentProvider(new MinetweakerDocumentProvider());
+		this.setSourceViewerConfiguration(new MinetweakerConfiguration(colorManager));
+		this.setDocumentProvider(new MinetweakerDocumentProvider());
 	}
+	
 	public void dispose() {
 		colorManager.dispose();
 		super.dispose();

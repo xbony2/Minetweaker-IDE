@@ -1,4 +1,4 @@
-package minetweaker_ide.editors;
+package minetweaker_ide.editors.detectors;
 
 import org.eclipse.jface.text.rules.IWhitespaceDetector;
 

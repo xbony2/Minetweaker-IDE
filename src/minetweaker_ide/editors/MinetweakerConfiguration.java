@@ -22,8 +22,8 @@ public class MinetweakerConfiguration extends SourceViewerConfiguration {
 	public String[] getConfiguredContentTypes(ISourceViewer sourceViewer) {
 		return new String[] {
 			IDocument.DEFAULT_CONTENT_TYPE,
-			MinetweakerPartitionScanner.XML_COMMENT,
-			MinetweakerPartitionScanner.XML_TAG };
+			MinetweakerPartitionScanner.ZS_COMMENT,
+			MinetweakerPartitionScanner.ZS_TAG };
 	}
 	public ITextDoubleClickStrategy getDoubleClickStrategy(
 		ISourceViewer sourceViewer,
@@ -56,8 +56,8 @@ public class MinetweakerConfiguration extends SourceViewerConfiguration {
 
 		DefaultDamagerRepairer dr =
 			new DefaultDamagerRepairer(getXMLTagScanner());
-		reconciler.setDamager(dr, MinetweakerPartitionScanner.XML_TAG);
-		reconciler.setRepairer(dr, MinetweakerPartitionScanner.XML_TAG);
+		reconciler.setDamager(dr, MinetweakerPartitionScanner.ZS_TAG);
+		reconciler.setRepairer(dr, MinetweakerPartitionScanner.ZS_TAG);
 
 		dr = new DefaultDamagerRepairer(getXMLScanner());
 		reconciler.setDamager(dr, IDocument.DEFAULT_CONTENT_TYPE);
@@ -67,8 +67,8 @@ public class MinetweakerConfiguration extends SourceViewerConfiguration {
 			new NonRuleBasedDamagerRepairer(
 				new TextAttribute(
 					colorManager.getColor(IMinetweakerColorConstants.ZS_COMMENT)));
-		reconciler.setDamager(ndr, MinetweakerPartitionScanner.XML_COMMENT);
-		reconciler.setRepairer(ndr, MinetweakerPartitionScanner.XML_COMMENT);
+		reconciler.setDamager(ndr, MinetweakerPartitionScanner.ZS_COMMENT);
+		reconciler.setRepairer(ndr, MinetweakerPartitionScanner.ZS_COMMENT);
 
 		return reconciler;
 	}
