@@ -13,11 +13,10 @@ public class MinetweakerScanner extends RuleBasedScanner {
 		IToken procInstr = new Token(new TextAttribute(manager.getColor(IMinetweakerColorConstants.ZS_COMMENT)));
 		IToken keyword = new Token(new TextAttribute(manager.getColor(IMinetweakerColorConstants.KEYWORD)));
 
-		IRule[] rules = new IRule[4];
+		IRule[] rules = new IRule[3];
 		rules[0] = new EndOfLineRule("#", procInstr);
 		rules[1] = new EndOfLineRule("//", procInstr);
-		rules[2] = new WordRule(null, keyword);
-		rules[3] = new WhitespaceRule(new MinetweakerWhitespaceDetector());
+		rules[2] = new WhitespaceRule(new MinetweakerWhitespaceDetector());
 
 		setRules(rules);
 	}
