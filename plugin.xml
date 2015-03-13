@@ -7,7 +7,7 @@
       <editor
             name="Minetweaker Editor"
             extensions="zs"
-            icon="icons/sample.gif"
+            icon="icons/icon.gif"
             contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
             class="minetweaker_ide.editors.MinetweakerEditor"
             id="minetweaker_ide.editors.MinetweakerEditor">

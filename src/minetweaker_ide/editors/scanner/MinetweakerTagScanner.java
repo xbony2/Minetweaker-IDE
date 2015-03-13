@@ -9,7 +9,6 @@ import org.eclipse.jface.text.rules.*;
 public class MinetweakerTagScanner extends RuleBasedScanner {
 
 	public MinetweakerTagScanner(ColorManager manager) {
-
 		IRule[] rules = new IRule[1];
 		// Add generic whitespace rule.
 		rules[0] = new WhitespaceRule(new MinetweakerWhitespaceDetector());

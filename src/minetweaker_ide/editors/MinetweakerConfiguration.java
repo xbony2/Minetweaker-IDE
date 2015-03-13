@@ -36,14 +36,14 @@ public class MinetweakerConfiguration extends SourceViewerConfiguration {
 	protected MinetweakerScanner getZSScanner() {
 		if (scanner == null) {
 			scanner = new MinetweakerScanner(colorManager);
-			scanner.setDefaultReturnToken(new Token(new TextAttribute(colorManager.getColor(IMinetweakerColorConstants.DEFAULT))));
+			scanner.setDefaultReturnToken(new Token(new TextAttribute(colorManager.getColor(ZSReferences.DEFAULT))));
 		}
 		return scanner;
 	}
 	protected MinetweakerTagScanner getZSTagScanner() {
 		if (tagScanner == null) {
 			tagScanner = new MinetweakerTagScanner(colorManager);
-			tagScanner.setDefaultReturnToken(new Token(new TextAttribute(colorManager.getColor(IMinetweakerColorConstants.TAG))));
+			tagScanner.setDefaultReturnToken(new Token(new TextAttribute(colorManager.getColor(ZSReferences.TAG))));
 		}
 		return tagScanner;
 	}
@@ -60,7 +60,7 @@ public class MinetweakerConfiguration extends SourceViewerConfiguration {
 		reconciler.setRepairer(dr, IDocument.DEFAULT_CONTENT_TYPE);
 
 		NonRuleBasedDamagerRepairer ndr = 
-				new NonRuleBasedDamagerRepairer(new TextAttribute(colorManager.getColor(IMinetweakerColorConstants.ZS_COMMENT)));
+				new NonRuleBasedDamagerRepairer(new TextAttribute(colorManager.getColor(ZSReferences.ZS_COMMENT)));
 		reconciler.setDamager(ndr, MinetweakerPartitionScanner.ZS_COMMENT);
 		reconciler.setRepairer(ndr, MinetweakerPartitionScanner.ZS_COMMENT);
 
