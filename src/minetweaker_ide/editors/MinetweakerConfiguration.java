@@ -23,10 +23,12 @@ public class MinetweakerConfiguration extends SourceViewerConfiguration {
 	public MinetweakerConfiguration(ColorManager colorManager) {
 		this.colorManager = colorManager;
 	}
+	
 	public String[] getConfiguredContentTypes(ISourceViewer sourceViewer) {
-		return new String[] { IDocument.DEFAULT_CONTENT_TYPE,
-				MinetweakerPartitionScanner.ZS_COMMENT, MinetweakerPartitionScanner.ZS_TAG };
+		return new String[] { IDocument.DEFAULT_CONTENT_TYPE, 
+			MinetweakerPartitionScanner.ZS_COMMENT, MinetweakerPartitionScanner.ZS_TAG };
 	}
+	
 	public ITextDoubleClickStrategy getDoubleClickStrategy(ISourceViewer sourceViewer, String contentType) {
 		if (doubleClickStrategy == null)
 			doubleClickStrategy = new MinetweakerDoubleClickStrategy();
@@ -40,6 +42,7 @@ public class MinetweakerConfiguration extends SourceViewerConfiguration {
 		}
 		return scanner;
 	}
+	
 	protected MinetweakerTagScanner getZSTagScanner() {
 		if (tagScanner == null) {
 			tagScanner = new MinetweakerTagScanner(colorManager);
@@ -59,12 +62,10 @@ public class MinetweakerConfiguration extends SourceViewerConfiguration {
 		reconciler.setDamager(dr, IDocument.DEFAULT_CONTENT_TYPE);
 		reconciler.setRepairer(dr, IDocument.DEFAULT_CONTENT_TYPE);
 
-		NonRuleBasedDamagerRepairer ndr = 
-				new NonRuleBasedDamagerRepairer(new TextAttribute(colorManager.getColor(ZSReferences.ZS_COMMENT)));
+		NonRuleBasedDamagerRepairer ndr = new NonRuleBasedDamagerRepairer(new TextAttribute(colorManager.getColor(ZSReferences.ZS_COMMENT)));
 		reconciler.setDamager(ndr, MinetweakerPartitionScanner.ZS_COMMENT);
 		reconciler.setRepairer(ndr, MinetweakerPartitionScanner.ZS_COMMENT);
 
 		return reconciler;
 	}
-
 }
